@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/margin -->
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: beige;
+        }
+
+        .inner {
+            width: 50%;
+            height: 50%;
+            background-color: blue;
+        }
+
+        .inner1 {
+            /* div같은 블럭 레벨을 center 포지셔닝 할때는 margin: auto 사용 */
+            /* 수평 센터 */
+            margin: auto;
+        }
+        
+        .box2 {
+            /* not 블럭 레벨은 text-align: center 사용 */
+            /* 수평 센터 */
+            text-align: center;
+        }
+
+        .inner3 {
+            transform: translate(50%, 50%);
+        }
+
+        .box4 h1 {
+            text-align: center;
+            /* line-height 부모의 크기가 100인것을 확인하고 100px을 지정. */
+            /* 그럼.. height이 100px인걸 확인하고 가운데로 정렬 */
+            /* 1줄 정렬 할때만 사용.. 2줄의 경우는 안됨 */
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>margin: auto</h3>
+    <div class="box box1">
+        <div class="inner inner1"></div>
+    </div>
+    <h3>text-align: center</h3>
+    <div class="box box2">
+        <button>button</button>
+    </div>
+    <h3>translate(50% 50%)</h3>
+    <div class="box box3">
+        <div class="inner inner3"></div>
+    </div>
+    <h3>Text centering</h3>
+    <div class="box box4">
+        <h1>Text</h1>
+    </div>
+</body>
+</html>
