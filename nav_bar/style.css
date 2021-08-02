@@ -1,0 +1,107 @@
+/* 변수를 할당해서 사용 가능 */
+:root {
+  --text-color: #f0f4f5;
+  --backgroud-color: #263343;
+  --accent-color: pink;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+  /* a tag의 줄그음 없애고, 색상은 흰색 */
+  text-decoration: none;
+  color: var(--text-color);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--backgroud-color);
+  padding: 8px 12px;
+}
+
+.navbar__logo {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.navbar__logo i {
+  color: var(--accent-color);
+}
+
+.navbar__menu {
+  display: flex;
+  /* li 태그 특유의 가운데 점 같은게 사라짐 */
+  list-style: none;
+  /* 개발자모드로 보면 왼쪽에 패딩이 들어간것이 보임.  */
+  padding-left: 0;
+}
+
+.navbar__menu li {
+    /* 클릭 할 수 있는 영역을 넓히기 위해 패딩을 준다. 마진을 주게되면 오히려 줄게 됨. */
+    padding: 8px; 12px;
+}
+
+.navbar__menu li:hover {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+.navbar__icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toggleBtn {
+    /* display: none 해서, 화면이 작아질때만 나오게 한다. */
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        /* width, 너비를 100%를 해야 center로 위치하게 됨. */
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        /* 너비가 넓어졌을때 텍스트는 자동으로 왼쪽으로 정렬 되기 때문에 center로 정렬 */
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+      display: flex;
+    }
+}
